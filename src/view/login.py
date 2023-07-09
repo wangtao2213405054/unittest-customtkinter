@@ -2,6 +2,7 @@
 # _date: 2023/7/9 18:46
 
 import customtkinter
+import tkinter.messagebox
 
 
 class Login(customtkinter.CTkFrame):
@@ -13,7 +14,6 @@ class Login(customtkinter.CTkFrame):
         :param master: 主窗口对象
         """
         super(Login, self).__init__(master)
-
         self.pack(pady=40, padx=120, fill="both", expand=True)
 
         # Title
@@ -53,7 +53,15 @@ class Login(customtkinter.CTkFrame):
         登录按钮回调事件
         :return:
         """
-        print(self.remember_password.get(), self.username.get(), self.password.get())
+        username = self.username.get()
+        password = self.password.get()
+
+        # da = customtkinter.CTkInputDialog()
+        # da.mainloop()
+        self.options = {'parent': self, 'icon': 'question', 'type': 'okcancel', 'title': '温馨提示', 'message': '请输入用户名和密码'}
+        self.tk.call('tk_messageBox', *self._options(self.options))
+        # if not all([username, password]):
+        #     tkinter.messagebox.askokcancel('温馨提示', '请输入用户名和密码', parent=self)
 
     def _canned_remember_data(self):
         """

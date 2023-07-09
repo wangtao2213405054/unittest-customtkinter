@@ -27,7 +27,6 @@ logs/
 *.egg
 MANIFEST
 test*.py
-subway/test.py
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
