@@ -35,7 +35,7 @@ def logger(level: INFO) -> None:
     """
 
     base_conf = get_conf()
-    print(base_conf)
+
     if not os.path.exists(base_conf):
         return
 
@@ -45,7 +45,6 @@ def logger(level: INFO) -> None:
         read_data['root']['level'] = level
         read_data['handlers']['file']['filename'] = _path
 
-    print('os')
     config.dictConfig(read_data)
 
 

@@ -20,7 +20,7 @@ class APP(customtkinter.CTk):
 
     def __init__(self):
         super(APP, self).__init__()
-        utils.logger.logger(utils.logger.DEBUG)
+        utils.logger(utils.DEBUG)
         self.set_windows()
         self.login = Login(self)
 
